@@ -851,6 +851,7 @@ extern "C" {
     pub fn LLVMMoveBasicBlockAfter(BB: LLVMBasicBlockRef, MovePos: LLVMBasicBlockRef);
     pub fn LLVMGetFirstInstruction(BB: LLVMBasicBlockRef) -> LLVMValueRef;
     pub fn LLVMGetLastInstruction(BB: LLVMBasicBlockRef) -> LLVMValueRef;
+    pub fn LLVMHasPredecessor(BB: LLVMBasicBlockRef) -> ::libc::c_int;
 }
 
 // Core->Instructions

@@ -364,6 +364,9 @@ fn is_llvm_debug() -> bool {
 }
 
 fn main() {
+    println!("cargo:rerun-if-changed=wrappers/target.h");
+    println!("cargo:rerun-if-changed=wrappers/target.cpp");
+
     // Behavior can be significantly affected by these vars.
     println!("cargo:rerun-if-env-changed={}", &*ENV_LLVM_PREFIX);
     if let Ok(path) = env::var(&*ENV_LLVM_PREFIX) {

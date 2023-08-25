@@ -28,6 +28,10 @@ void _LLD_Link(const char** rawArgs, uint32_t arglen, uint32_t linkType) {
     }
 }
 
+extern "C" LLVMBool EXPORT LLVMHasPredecessor(LLVMBasicBlockRef block) {
+    return llvm::unwrap(block)->hasNPredecessorsOrMore(1);
+}
+
 extern "C" void EXPORT LLD_LinkElf(const char** args, uint32_t arglen) {
     _LLD_Link(args, arglen, 0);
 }

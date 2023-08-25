@@ -1,3 +1,5 @@
+#include <llvm/IR/CFG.h>
+#include <llvm/IR/BasicBlock.h>
 #include <llvm-c/Target.h>
 #include <lld/Common/Driver.h>
 
@@ -17,3 +19,4 @@ extern "C" LLVMBool EXPORT LLVM_InitializeNativeTarget(void);
 extern "C" LLVMBool EXPORT LLVM_InitializeNativeAsmParser(void);
 extern "C" LLVMBool EXPORT LLVM_InitializeNativeAsmPrinter(void);
 extern "C" LLVMBool EXPORT LLVM_InitializeNativeDisassembler(void);
+extern "C" LLVMBool EXPORT LLVMHasPredecessor(LLVMBasicBlockRef block);
